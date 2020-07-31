@@ -56,12 +56,10 @@ body {
     border: 1px solid black !important;
 }
 
-#footer {
-    
+.bg-black {
+    background: #000 !important;
 }
-.footer-font {
-    font-family: 'Montserrat', sans-serif;
-}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
