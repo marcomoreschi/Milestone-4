@@ -60,8 +60,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'marco_store.urls'
 
-CRISPY_FORMS = 'bootstrap4'
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
