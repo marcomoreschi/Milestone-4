@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load reviews %}
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -88,26 +87,25 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
                         </div>
-                    </form>
-                    {% render_review_list for product %}
-                    {% get_review_form for product as form %}
-                    
-                    
-                     <table>
-                    <form action="{% review_form_target %}" method="post">
-                        {% csrf_token %}
-                        {{ form }}
-                        <tr>
-                        <td colspan="2">
-                            <input type="submit" name="submit" value="Post">
-                           <input type="hidden" name="next" value="{% url 'product_detail' product_id=product.id %}" />
-                           <input type="hidden" name="is_public" value = "True" />
-                        </td>
-                        </tr>
-                    </form>
-                    </table> 
-                    
+                    </form> 
                 </div>
+                <form method="POST">
+                {% csrf_token %}
+                <select name="Rating"><option value="1"> 1</option>
+                        <option value="2"> 2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </select>
+                <textarea name="Description"></textarea>
+                <button type="submit"> Submit </button>
+                </form>
+                {% for review in product.reviews.all %}
+                {{ review.author }}<br/>
+                {{ review.timestamp }}<br/>
+                {{ review.rating}}<br/>
+                {{ review.description}}
+                {% endfor %}
             </div>
         </div>
     </div>

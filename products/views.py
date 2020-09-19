@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, Review
 from django.db.models.functions import Lower
 
 # Create your views here.
@@ -59,6 +59,16 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
+
+    if request.method == "POST":
+        rating = int(request.POST["Rating"])
+        description = request.POST["Description"]
+        product = Product.objects.get(id = product_id)
+        author = request.user
+        Review.objects.create(rating=rating, description=description, product=product, author=author)
+    
+
+
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
