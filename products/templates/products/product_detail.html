@@ -89,24 +89,35 @@
                         </div>
                     </form> 
                 </div>
-                <form method="POST">
-                {% csrf_token %}
-                <select name="Rating"><option value="1"> 1</option>
-                        <option value="2"> 2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                </select>
-                <textarea name="Description"></textarea>
-                <button type="submit"> Submit </button>
-                </form>
-                {% for review in product.reviews.all %}
-                {{ review.author }}<br/>
-                {{ review.timestamp }}<br/>
-                {{ review.rating}}<br/>
-                {{ review.description}}
-                {% endfor %}
+                <h3> Write a Review </h3>
+                <div>
+                    <form method="POST">
+                            {% csrf_token %}
+                            <select name="Rating"><option value="1"> 1</option>
+                                    <option value="2"> 2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                            </select>
+                            <br/>
+                            <textarea width="100" height="20" name="Description" style="width: 500px; height: 200px; resize: none "></textarea>
+                            <br/>
+                            <button type="submit"> Submit </button>
+                    </form>
+                </div>
             </div>
+        </div>
+        <div class="container">
+        <h4>Reviews:</h4>
+                
+                {% for review in product.reviews.all %}
+                <div style= "margin-top: 30px;">
+                    {{ review.author }}<br/>
+                    {{ review.timestamp }}<br/>
+                    {{ review.rating}}<br/>
+                    {{ review.description}}<br/>
+                </div>
+                {% endfor %}
         </div>
     </div>
     
