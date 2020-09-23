@@ -69,12 +69,22 @@ def product_detail(request, product_id):
     
 
 
-    """ A view to show individual product details """
-
     product = get_object_or_404(Product, pk=product_id)
+
+    # print(product.reviews.all())
+
+    ratings = [review.rating for review in product.reviews.all()]
+    
+    if len(ratings) == 0:
+        avarage = None
+    else:
+        avarage = sum (ratings) / len(ratings)
+        avarage = round(avarage, 1)
+    
 
     context = {
         'product': product,
+        'avarage': avarage,
     }
 
     return render(request, 'products/product_detail.html', context)

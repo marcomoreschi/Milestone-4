@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
+{% load filters %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -25,8 +31,8 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                    {% if avarage %}
+                        <small class="text-muted"><i id="star" class="fas fa-star mr-1"></i>{{ avarage }} / 5</small>
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
@@ -93,14 +99,21 @@
                 <div>
                     <form method="POST">
                             {% csrf_token %}
-                            <select name="Rating"><option value="1"> 1</option>
+                            <input name="Rating" id="rating" type="hidden" required>
+                            <!-- <select name="Rating"><option value="1"> 1</option>
                                     <option value="2"> 2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
-                            </select>
+                            </select> -->
                             <br/>
-                            <textarea width="100" height="20" name="Description" style="width: 500px; height: 200px; resize: none "></textarea>
+                            <i id="1" class="star fas fa-star mr-1"></i>
+                            <i id="2" class="star fas fa-star mr-1"></i>
+                            <i id="3" class="star fas fa-star mr-1"></i>
+                            <i id="4" class="star fas fa-star mr-1"></i>
+                            <i id="5" class="star fas fa-star mr-1"></i>
+                            <br/>
+                            <textarea required width="100" height="20" name="Description" style="width: 500px; height: 200px; resize: none "></textarea>
                             <br/>
                             <button type="submit"> Submit </button>
                     </form>
@@ -114,7 +127,11 @@
                 <div style= "margin-top: 30px;">
                     {{ review.author }}<br/>
                     {{ review.timestamp }}<br/>
-                    {{ review.rating}}<br/>
+                    {% for i in review.rating|times %}
+                    <i class="review-star fas fa-star mr-1"></i>
+                    {% endfor %}
+
+                    <br/>
                     {{ review.description}}<br/>
                 </div>
                 {% endfor %}
@@ -126,6 +143,61 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
+
+    //stars review
+    // for(var i = 1; i <= 5; i ++){
+    //     document.getElementById (`${i}`).addEventListener('click', function(){
+    //         console.log(i)
+    //     })
+    // }
+
+    document.getElementById (`1`).addEventListener('click', () => {
+        document.getElementById("1").style.color="yellow"
+        document.getElementById("2").style.color="grey"
+        document.getElementById("3").style.color="grey"
+        document.getElementById("4").style.color="grey"
+        document.getElementById("5").style.color="grey"
+        document.getElementById("rating").value="1"
+    } )
+
+    document.getElementById (`2`).addEventListener('click', () => {
+        document.getElementById("1").style.color="yellow"
+        document.getElementById("2").style.color="yellow"
+        document.getElementById("3").style.color="grey"
+        document.getElementById("4").style.color="grey"
+        document.getElementById("5").style.color="grey"
+        document.getElementById("rating").value="2"
+    } )
+    document.getElementById (`3`).addEventListener('click', () => {
+        document.getElementById("1").style.color="yellow"
+        document.getElementById("2").style.color="yellow"
+        document.getElementById("3").style.color="yellow"
+        document.getElementById("4").style.color="grey"
+        document.getElementById("5").style.color="grey"
+        document.getElementById("rating").value="3"
+    } )
+    document.getElementById (`4`).addEventListener('click', () => {
+        document.getElementById("1").style.color="yellow"
+        document.getElementById("2").style.color="yellow"
+        document.getElementById("3").style.color="yellow"
+        document.getElementById("4").style.color="yellow"
+        document.getElementById("5").style.color="grey"
+        document.getElementById("rating").value="4"
+    } )
+    document.getElementById (`5`).addEventListener('click', () => {
+        document.getElementById("1").style.color="yellow"
+        document.getElementById("2").style.color="yellow"
+        document.getElementById("3").style.color="yellow"
+        document.getElementById("4").style.color="yellow"
+        document.getElementById("5").style.color="yellow"
+        document.getElementById("rating").value="5"
+    } )
+
+
+
+
+
+
 
     // Disable +/- buttons outside 1-99 range
     function handleEnableDisable(itemId) {

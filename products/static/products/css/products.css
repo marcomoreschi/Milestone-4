@@ -1,0 +1,13 @@
+.star:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    
+}
+
+#star {
+    color: yellow;
+}
+
+.review-star{
+    color: yellow;
+}
