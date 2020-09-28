@@ -100,12 +100,6 @@
                     <form method="POST">
                             {% csrf_token %}
                             <input name="Rating" id="rating" type="hidden" required>
-                            <!-- <select name="Rating"><option value="1"> 1</option>
-                                    <option value="2"> 2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                            </select> -->
                             <br/>
                             <i id="1" class="star fas fa-star mr-1"></i>
                             <i id="2" class="star fas fa-star mr-1"></i>
@@ -115,7 +109,7 @@
                             <br/>
                             <textarea required width="100" height="20" name="Description" style="width: 500px; height: 200px; resize: none "></textarea>
                             <br/>
-                            <button type="submit"> Submit </button>
+                            <button type="submit" class="btn btn-black rounded-0"> Submit </button>
                     </form>
                 </div>
             </div>
@@ -144,52 +138,46 @@
 {{ block.super }}
 <script type="text/javascript">
 
-    //stars review
-    // for(var i = 1; i <= 5; i ++){
-    //     document.getElementById (`${i}`).addEventListener('click', function(){
-    //         console.log(i)
-    //     })
-    // }
 
     document.getElementById (`1`).addEventListener('click', () => {
-        document.getElementById("1").style.color="yellow"
-        document.getElementById("2").style.color="grey"
-        document.getElementById("3").style.color="grey"
-        document.getElementById("4").style.color="grey"
-        document.getElementById("5").style.color="grey"
+        document.getElementById("1").style.color="blue"
+        document.getElementById("2").style.color="LightGray"
+        document.getElementById("3").style.color="LightGray"
+        document.getElementById("4").style.color="LightGray"
+        document.getElementById("5").style.color="LightGray"
         document.getElementById("rating").value="1"
     } )
 
     document.getElementById (`2`).addEventListener('click', () => {
-        document.getElementById("1").style.color="yellow"
-        document.getElementById("2").style.color="yellow"
-        document.getElementById("3").style.color="grey"
-        document.getElementById("4").style.color="grey"
-        document.getElementById("5").style.color="grey"
+        document.getElementById("1").style.color="blue"
+        document.getElementById("2").style.color="blue"
+        document.getElementById("3").style.color="LightGray"
+        document.getElementById("4").style.color="LightGray"
+        document.getElementById("5").style.color="LightGray"
         document.getElementById("rating").value="2"
     } )
     document.getElementById (`3`).addEventListener('click', () => {
-        document.getElementById("1").style.color="yellow"
-        document.getElementById("2").style.color="yellow"
-        document.getElementById("3").style.color="yellow"
-        document.getElementById("4").style.color="grey"
-        document.getElementById("5").style.color="grey"
+        document.getElementById("1").style.color="blue"
+        document.getElementById("2").style.color="blue"
+        document.getElementById("3").style.color="blue"
+        document.getElementById("4").style.color="LightGray"
+        document.getElementById("5").style.color="LightGray"
         document.getElementById("rating").value="3"
     } )
     document.getElementById (`4`).addEventListener('click', () => {
-        document.getElementById("1").style.color="yellow"
-        document.getElementById("2").style.color="yellow"
-        document.getElementById("3").style.color="yellow"
-        document.getElementById("4").style.color="yellow"
-        document.getElementById("5").style.color="grey"
+        document.getElementById("1").style.color="blue"
+        document.getElementById("2").style.color="blue"
+        document.getElementById("3").style.color="blue"
+        document.getElementById("4").style.color="blue"
+        document.getElementById("5").style.color="LightGray"
         document.getElementById("rating").value="4"
     } )
     document.getElementById (`5`).addEventListener('click', () => {
-        document.getElementById("1").style.color="yellow"
-        document.getElementById("2").style.color="yellow"
-        document.getElementById("3").style.color="yellow"
-        document.getElementById("4").style.color="yellow"
-        document.getElementById("5").style.color="yellow"
+        document.getElementById("1").style.color="blue"
+        document.getElementById("2").style.color="blue"
+        document.getElementById("3").style.color="blue"
+        document.getElementById("4").style.color="blue"
+        document.getElementById("5").style.color="blue"
         document.getElementById("rating").value="5"
     } )
 
