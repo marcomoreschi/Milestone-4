@@ -66,21 +66,16 @@ def product_detail(request, product_id):
         product = Product.objects.get(id = product_id)
         author = request.user
         Review.objects.create(rating=rating, description=description, product=product, author=author)
-    
-
 
     product = get_object_or_404(Product, pk=product_id)
 
-    # print(product.reviews.all())
-
     ratings = [review.rating for review in product.reviews.all()]
-    
+
     if len(ratings) == 0:
         avarage = None
     else:
         avarage = sum (ratings) / len(ratings)
         avarage = round(avarage, 1)
-    
 
     context = {
         'product': product,
