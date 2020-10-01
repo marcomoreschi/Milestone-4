@@ -29,7 +29,11 @@ class Product(models.Model):
     @property
     def avarage(self):
         ratings = [review.rating for review in self.reviews.all()]
-        avarage = sum (ratings) / len(ratings)
+        if len(ratings)> 0:
+            avarage = sum (ratings) / len(ratings)
+        else:
+            avarage = 0
+        #avarage = sum (ratings) / len(ratings)
         avarage = round(avarage, 1)
         return avarage
 
