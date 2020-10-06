@@ -15,6 +15,21 @@ When testing this app, to make a payment, the following details should be used:
 </p>
 </div>
 
+## Table of Contents
+1. [**User Experience (UX)**](#UserExperience(UX))
+
+2. [**Wireframes**](#wireframes)
+
+2. [**Features**](#features)
+
+3. [**Technologies**](#technologies)
+
+4. [**Testing**](#testing)
+
+5. [**Deployment**](#deployment)
+
+6. [**Credits**](#credits)
+
 
 
 
@@ -37,6 +52,12 @@ All these features were created following these users’ goals:
 ##### Business owner:
 
 *	As a business owner, I want to be able to add, remove products and update product details.
+
+### Wireframes
+
+These wireframes were created using [Balsamiq](https://balsamiq.com/) during the Scope Plane part of the design and planning process for this project.
+
+[View the wireframes here](https://github.com/marcomoreschi/Milestone-4/tree/master/Wireframes) 
 
 ## Features
 
