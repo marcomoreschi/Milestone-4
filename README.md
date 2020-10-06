@@ -129,7 +129,9 @@ All these features were created following these users’ goals:
 
 For this app, testing was made manually and with validator services. 
 During development I constantly used Chrome Developer Tools to ensure responsiveness on all devices. During development, in settings.py, Django's debugger was set to:
+```console
 debug = False
+```
 This was so to ensure that when the app encounters an error, Django gives a detailed report of what happened and why the error occurred.
 ### Validators
 *	W3C HTML Validator - this tool checks the .html files validity
@@ -142,118 +144,152 @@ Manual testing was done on a series of different screen devices and browsers as 
 *	click on each navbar link to see if they open the designated pages. Notice if hover effects work and if the active state of the link is highlighted when on page
 *	on smaller than medium devices, check if the toggle button and links work
 #### Search bar
-•	type in different existent keywords from name or description of the product. See if the results for the search are correct
-•	type an inexistent keyword from name or description of the product. See if it gives no results
-•	make a search without an input. See if your receive an error and you get redirected to the products page
+*	type in different existent keywords from name or description of the product. See if the results for the search are correct
+*	type an inexistent keyword from name or description of the product. See if it gives no results
+*	make a search without an input. See if your receive an error and you get redirected to the products page
 #### Home
-•	check responsiveness for products and collections cards display on different devices
-•	click on each collection card to see if you are redirected to the designated collection page
+*	check responsiveness for products and collections cards display on different devices
+*	click on each collection card to see if you are redirected to the designated collection page
 #### All products
-•	check if all products are displayed and the number of them is correct
-•	check if pagination links work properly
-•	click on each collection filter bag to see if they work properly. Check if the pagination links work.
-•	select each sorting option and see if the sorting works as intended
+*	check if all products are displayed and the number of them is correct
+*	check if pagination links work properly
+*	click on each collection filter bag to see if they work properly. Check if the pagination links work.
+*	select each sorting option and see if the sorting works as intended
 #### Product details
-•	check responsiveness of product details displays on different screens
-•	choose a quantity and click add to cart. See if a success message appears that contains the product selected, total price, delivery, and button to go for checkout
-•	try to type a bigger than 99 or smaller than 1 quantity. See if you get an error message
-•	remove 1 as default quantity. Click add to bag. See if you get an error message
-•	try to add letters as quantity. See if it was possible. 
-•	see if the reviews are displayed correctly: username, date, star rating, subject and body
-•	introduce different star ratings. Check if the star rating selected is displayed correct. Check if the average star rating is calculated correct and displayed properly
+*	check responsiveness of product details displays on different screens
+*	choose a quantity and click add to cart. See if a success message appears that contains the product selected, total price, delivery, and button to go for checkout
+*	try to type a bigger than 99 or smaller than 1 quantity. See if you get an error message
+*	remove 1 as default quantity. Click add to bag. See if you get an error message
+*	try to add letters as quantity. See if it was possible. 
+*	see if the reviews are displayed correctly: username, date, star rating, subject and body
+*	introduce different star ratings. Check if the star rating selected is displayed correct. Check if the average star rating is calculated correct and displayed properly
 #### Bag page
-•	click on the bag icon from the header to see if you get to the bag page
-•	check if the selected products and the correct quantity are inside the bag
-•	try to type a bigger than 99 or smaller than 1 quantity and click update. See if you get an error message
-•	remove 1 as default quantity. Click update. See if you get an error message
-•	try to add letters as quantity. See if it was possible. 
-•	use increment and decrement buttons and click update. See if the updated quantity is the one selected.
-•	click remove and see if the product is removed from the bag
-•	remove all products and see if the back is empty
-•	check if the total price, delivery, and grand total are calculated correct.
+*	click on the bag icon from the header to see if you get to the bag page
+*	check if the selected products and the correct quantity are inside the bag
+*	try to type a bigger than 99 or smaller than 1 quantity and click update. See if you get an error message
+*	remove 1 as default quantity. Click update. See if you get an error message
+*	try to add letters as quantity. See if it was possible. 
+*	use increment and decrement buttons and click update. See if the updated quantity is the one selected.
+*	click remove and see if the product is removed from the bag
+*	remove all products and see if the back is empty
+*	check if the total price, delivery, and grand total are calculated correct.
 #### Checkout page
-•	as a user not logged in click on secure checkout button. Check if a modal opens that gives option but as a guest. 
-•	as logged in user, click on secure checkout button, and see if you are redirected to checkout page.
-•	on checkout page, see if the order summary is displayed with the selected products, and if you didn’t spend £30 it will tell you how much you have to spend more for free delivery. 
-•	as a user not logged in see if the delivery information form fields are empty
-•	as a logged in user see if the delivery information fields are prepopulated with your details provided in your profile
+*	as a user not logged in click on secure checkout button. Check if a modal opens that gives option but as a guest. 
+*	as logged in user, click on secure checkout button, and see if you are redirected to checkout page.
+*	on checkout page, see if the order summary is displayed with the selected products, and if you didn’t spend £30 it will tell you how much you have to spend more for free delivery. 
+*	as a user not logged in see if the delivery information form fields are empty
+*	as a logged in user see if the delivery information fields are prepopulated with your details provided in your profile
 #### Payment
 For payments testing the following details should be use:
-•	Card number: 4242 4242 4242 4242
-•	CVC: any 3 digits
-•	Date: any future date
-•	ZIP Code: any 5 digits
+*	Card number: 4242 4242 4242 4242
+*	CVC: any 3 digits
+*	Date: any future date
+*	ZIP Code: any 5 digits
 #### Try the following scenarios:
-•	type a wrong card number
-•	type the correct payment details but do not provide your delivery details, see if you get error messages from the form
+*	type a wrong card number
+*	type the correct payment details but do not provide your delivery details, see if you get error messages from the form
 #### Checkout success
-•	on checkout success page you should have a message that contains your order number and the email address where you'll get details with your order
-•	as a logged in user or as a guest you have a button that redirects to the home page.
-•	profile page is available only for logged in users
-•	type your details in the delivery information form. Click update then go to the checkout page. Check if the delivery information form from checkout page is prepopulated with the correct information
-•	try to update your delivery information without completing all the fields required. See if you get error messages.
-•	
-Deployment
+*	on checkout success page you should have a message that contains your order number and the email address where you'll get details with your order
+*	as a logged in user or as a guest you have a button that redirects to the home page.
+*	profile page is available only for logged in users
+*	type your details in the delivery information form. Click update then go to the checkout page. Check if the delivery information form from checkout page is prepopulated with the correct information
+*	try to update your delivery information without completing all the fields required. See if you get error messages.
+
+## Deployment
 This application can run locally or deployed to a live environment
-Local
+## Local
 The example provided uses GitPod as a code editor and Windows as an operating system.
 1.	Save a copy of the github repository located at https://github.com/marcomoreschi/Milestone-4  by clicking the 'download.zip' button at the top of the page and extracting the zip file to your chosen folder. 
 2.	In your IDE terminal, navigate to this folder
 3.	Install the required packages and start your virtual environment with these commands
+```console
 pipenv install
 pipenv shell
+```
 4.	Install all required modules with the command:
+```console
 pip install -r requirements.txt
+```
 5.	Create a env.py file and add it to your .gitignore
 6.	Copy the following into the env.py file:
+```console
 7.	import os
 8.	
 9.	os.environ['SECRET_KEY'] = 'your value'
 10.	os.environ['DATABASE_URL'] = 'your value'
 11.	os.environ['STRIPE_PUBLIC_KEY'] = 'your value'
 12.	os.environ['STRIPE_SECRET_KEY'] = 'your value'
-13.	os.environ['STRIPE_WH_SECRET'] = 'your value'
-14.	os.environ['AWS_ACCESS_KEY_ID'] = 'your value'
-15.	os.environ['AWS_SECRET_ACCESS_KEY'] = 'your value'
+13.	os.environ['AWS_ACCESS_KEY_ID'] = 'your value'
+14.	os.environ['AWS_SECRET_ACCESS_KEY'] = 'your value'
 os.environ['DEVELOPMENT'] = '1'
-16.	Set up the databases by running the following management command in your terminal:
+```
+15.	Set up the databases by running the following management command in your terminal:
+```console
 python manage.py migrate
-17.	Create the superuser so you can have access to the django admin:
+```
+16.	Create the superuser so you can have access to the django admin:
+```console
 python manage.py createsuperuser
-18.	Start your server by running the following command in your terminal:
+```
+17.	Start your server by running the following command in your terminal:
+```console
 python manage.py runserver
-Deploy to Heroku
+```
+### Deploy to Heroku
 The deployed site can be found here: https://marco-moreschi-milestone.herokuapp.com/
 Login to Heroku and create a new app
 1.	On the Resources tab, in the Add-ons field look for Heroku Postgres, select the default Hobby Dev - Free tier, then click the Provision button. This will provision a Postgres Database for you.
 2.	In Heroku, go on settings tab and click Reveal Config Vars.
 3.	Add the values from your env.py file to heroku:
-AWS_ACCESS_KEY_ID - your value
-   AWS_SECRET_ACCESS_KEY - your value
-DATABASE_URL - your value
-EMAIL_HOST_PASS - your value
-EMAIL_HOST_USER - your value
-SECRET_KEY - your value
-STRIPE_PUBLIC_KEY - your value
-STRIPE_SECRET_KEY - your value
-STRIPE_WH_SECRET - your value
-USE_AWS - True
+```console
+* AWS_ACCESS_KEY_ID - your value
+* AWS_SECRET_ACCESS_KEY - your value
+* DATABASE_URL - your value
+* EMAIL_HOST_PASS - your value
+* EMAIL_HOST_USER - your value
+* SECRET_KEY - your value
+* STRIPE_PUBLIC_KEY - your value
+* STRIPE_SECRET_KEY - your value
+USE_AWS - True*
+```
 4.	Set up the databases with the following command:
+```console
 python manage.py migrate
+```
 5.	Create the superuser for the postgres database so you can have access to the django admin:
+```console
 python manage.py createsuperuser
+```
 6.	Preload products and collections using following commands (the order is important):
-7.	python manage.py loaddata collections.json
+7.	
+```console
+python manage.py loaddata collections.json
 python manage.py loaddata products.json
+```
 8.	Save all the requirements:
+```console
 pip freeze > requirements.txt
+```
 9.	Create Procfile:
+```console
 echo web: gunicorn dream_woollies.wsgi:application > Procfile
+```
 10.	Add the files and push them to Github:
+```console
 11.	git add .
 12.	git commit
-git push
+    git push
+```
 13.	Deploy branch in Heroku
 14.	In settings.py add https://marco-moreschi-milestone.herokuapp.com/  to Allowed Hosts
 
+## Credits
 
+### Media 
+
+All the images and texts were provided in Google which is the rightful owner of their copyright.
+
+### Code
+
+*	A big part of the code was developed by following the Code Institute video lessons. Where needed, I provided credits in the comments of the code.
+*	StackOverflow where I found answers for different topics.
