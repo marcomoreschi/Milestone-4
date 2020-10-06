@@ -171,4 +171,15 @@ body {
     body {
         height: calc(100vh - 116px);
     }
+
+    .nav-link-icon {
+        padding: 0.12rem;
+    }
+
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
+
 }
+
+

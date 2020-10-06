@@ -131,9 +131,6 @@ else:
     }
 print(DATABASES)
 
-# DATABASES = {
-#     'default': dj_database_url.parse('postgres://fqsclhmmlxzxey:db735a9ae9b7f9a3093eb2a10ca261498cae35f9bacaeab4bf64b690cd1cfd03@ec2-54-166-251-173.compute-1.amazonaws.com:5432/d349mem3c59c7s')
-# }
 
 
 
@@ -209,5 +206,3 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-DEFAULT_FROM_EMAIL = 'marco-store@example.com'

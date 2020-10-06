@@ -109,9 +109,7 @@
     
 
 
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
+    
 
     {% block page_header %}
     {% endblock %}
@@ -119,22 +117,6 @@
     {% block content %}
     {% endblock %}
 
-    <!--{% block footer %}
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="text-black title-font">Site by Marco Moreschi:</h5>
-                    <p class="text-black">© 2020 Copyright Marco Moreschi</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="text-black">My Github:</h5>
-                    <a href="https://github.com/marcomoreschi"><i class="fab fa-github fa-2x text-black"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    {% endblock %}-->
 
     {% block postloadjs %}
     {% endblock %}
